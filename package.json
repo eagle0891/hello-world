@@ -1,0 +1,24 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "i'm a thing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eagle0891/hello-world.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eagle0891/hello-world/issues"
+  },
+  "homepage": "https://github.com/eagle0891/hello-world#readme",
+  "devDependencies": {
+    "wdio-mocha-framework": "^0.6.2",
+    "webdriverio": "^4.13.1"
+  }
+}
