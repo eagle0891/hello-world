@@ -19,6 +19,11 @@
   "homepage": "https://github.com/eagle0891/hello-world#readme",
   "devDependencies": {
     "wdio-mocha-framework": "^0.6.2",
+    "wdio-selenium-standalone-service": "0.0.10",
     "webdriverio": "^4.13.1"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "wdio-spec-reporter": "^0.1.5"
   }
 }
