@@ -11,7 +11,7 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/NavigateToHomepage.spec.js',
-        './test/specs/**/FlightSearch.spec.js',
+        './test/specs/**/DisplayDepartureAirportlist.spec.js',
     ],
     // Patterns to exclude.
     exclude: [
