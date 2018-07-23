@@ -1,11 +1,6 @@
 var expect = require('chai').expect;
 var HomepageActions = require('C://Users/Ugo/OneDrive/My Documents/hello-world/test/Actions/Homepage.page.js');
 
-const depAirport = {
-    BFS: 'BFS', 
-    LBA: 'LBA'
-}
-
 const txt_selectedDepAirport = { 
     BFS: 'Belfast Intl BFS',
     LBA: 'Leeds Bradford LBA'
@@ -23,9 +18,8 @@ describe('Homepage', () => {
                 HomepageActions.link_searchPanelShowDepList.waitForVisible();
                 HomepageActions.link_searchPanelShowDepList.waitForEnabled();
                 HomepageActions.link_searchPanelShowDepList.click();
-                var link_depAirport = browser.element('//div[@data-apt="depart"]/div[@class="search__airport__wrapper"]/div/div[@class="tabs__content tabs__content--active"]/ul/li[@data-iata="' + depAirport.LBA + '"]');
-                link_depAirport.waitForVisible();
-                link_depAirport.click();
+                HomepageActions.link_depAirport.waitForVisible();
+                HomepageActions.link_depAirport.click();
             })
 
             it('should be displayed in the From field', () => {
