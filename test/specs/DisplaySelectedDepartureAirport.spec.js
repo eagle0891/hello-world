@@ -23,7 +23,7 @@ describe('Homepage', () => {
             })
 
             it('should be displayed in the From field', () => {
-                var inputTxt_departAirport = browser.element('//input[@name="depart_name"]').getValue();
+                var inputTxt_departAirport = HomepageActions.input_departAirport.getValue();
                 console.log('the departure airport is ' + inputTxt_departAirport);
                 expect(inputTxt_departAirport).equal(txt_selectedDepAirport.LBA);
             });
