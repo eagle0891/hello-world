@@ -10,7 +10,11 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/**/*spec.js'
+        //'./test/specs/**/NavigateToHomepage.spec.js',
+        // './test/specs/**/DisplaySearchPanel.spec.js',
+        // './test/specs/**/DisplaySelectedArrivalAirport.spec.js',
+        //'./test/specs/**/DisplaySelectedDepartureAirport.spec.js',
+        './test/specs/**/SelectDepartureDate.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -80,7 +84,7 @@ exports.config = {
     baseUrl: 'https://www.jet2.com',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 50000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -130,7 +134,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 35000
+        timeout: 95000
     },
     //
     // =====
