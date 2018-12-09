@@ -1,6 +1,4 @@
 var expect = require('chai').expect;
-// var chaiWebdriver = require('chai-webdriverio').default;
-// chai.use(chaiWebdriver(browser));
 var HomepageActions = require('C://Users/Ugo/OneDrive/My Documents/hello-world/test/Actions/Homepage.page.js');
 
 const txt_selectedAirport = { 
@@ -59,17 +57,9 @@ describe('Homepage', () => {
                 browser.element('//select[@class="ui-datepicker-month"]').click();
                 browser.element('//option[@value="11"]').waitForVisible();
                 browser.element('//option[@value="11"]').click();
-
-                //let depDate = browser.element('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]');
-                //depDate.click();
-
                 
                 let dateArray = [browser.getHTML('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]')]; //create new empty array
-                //let dateElementArray = [browser.elements('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]')]
-                //let dates = browser.getHTML('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]'); //find the date elements and get the text of each
-                //dateArray.push(dates); //Add the dates to the array
                 console.log(dateArray[0].length); //print the contents of the array  <a class="ui-state-default" href="#">20</a>
-                //console.log(dateElementArray[0].length)
                 
                 for (x=0; x < dateArray[0].length; x++) {
                 let specifiedDate = dateArray[0][x];
