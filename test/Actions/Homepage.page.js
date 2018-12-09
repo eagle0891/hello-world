@@ -11,8 +11,8 @@ var Homepage = Object.create(Page, {
 
 link_emailSignUpLightboxClose: { get: function() { return browser.element('[class="t071a-close-lightbox"]'); } },
 searchPanel: { get: function() { return browser.element('[name="search-panel"]'); } },
-link_searchPanelShowDepList: { get: function() { return browser.element('[class="list-input depart-list gtm__standardMode"]'); } },
-link_searchPanelShowArrList: { get: function() { return browser.element('[class="list-input return-list gtm__standardMode"]'); } },
+link_searchPanelShowDepList: { get: function() { return browser.element('[data-modal-id="departureList"][data-searchbox="search-box-from"]'); } },
+link_searchPanelShowArrList: { get: function() { return browser.element('[data-modal-id="destinationList"][data-searchbox="search-box-to"]'); } },
 link_depAirport: { get: function() { return browser.element('//div[@data-apt="depart"]/div[@class="search__airport__wrapper"]/div/div[@class="tabs__content tabs__content--active"]/ul/li[@data-iata="' + airport.LBA + '"]'); } },
 link_arrAirport: { get: function() { return browser.element('//div[@data-apt="arrival"]/div[@class="search__airport__wrapper"]/div/div[@class="tabs__content tabs__content--active"]/ul/li[@data-iata="' + airport.ALC + '"]'); } },
 input_departAirport: { get: function() { return browser.element('//input[@name="depart_name"]'); } },
