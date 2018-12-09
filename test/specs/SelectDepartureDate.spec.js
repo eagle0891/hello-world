@@ -49,20 +49,36 @@ describe('Homepage', () => {
             });
         });
 
-        describe('Given I select a departure date', () => {
+        describe('Given I select a departure and arrival date', () => {
             before(() => {
                 HomepageActions.link_departureDateCalendar.waitForVisible();
                 HomepageActions.link_departureDateCalendar.waitForEnabled();
                 browser.pause(500);                
                 HomepageActions.link_departureDateCalendar.click();
+                browser.element('//select[@class="ui-datepicker-month"]').waitForVisible();
+                browser.element('//select[@class="ui-datepicker-month"]').click();
+                browser.element('//option[@value="11"]').waitForVisible();
+                browser.element('//option[@value="11"]').click();
 
-                let selectableDates = browser.elements('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]').value;
+                //let depDate = browser.element('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]');
+                //depDate.click();
+
                 
-                console.log(selectableDates);
-                console.log("dates are " + selectableDates); //text is not defined in this element - will throw error
-                console.log("number of dates is " + selectableDates.length);
-                console.log(selectableDates[1]);
-                selectableDates[1].click();            
+                let dateArray = [browser.getHTML('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]')]; //create new empty array
+                //let dateElementArray = [browser.elements('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]')]
+                //let dates = browser.getHTML('//div[@data-cal="depart"]/div/table/tbody/tr/td[@data-handler="selectDay"]/a[@href="#"]'); //find the date elements and get the text of each
+                //dateArray.push(dates); //Add the dates to the array
+                console.log(dateArray[0].length); //print the contents of the array  <a class="ui-state-default" href="#">20</a>
+                //console.log(dateElementArray[0].length)
+                
+                for (x=0; x < dateArray[0].length; x++) {
+                let specifiedDate = dateArray[0][x];
+                    for (i=1; i < 31; i++) {
+                        if ( specifiedDate === '<a class="ui-state-default" href="#">' + i + '</a>') {
+                        browser.selectByVisibleText(i).click();
+                        }
+                    }
+                }
             })
 
             it('should display the departure date calendar', () => {
@@ -70,8 +86,3 @@ describe('Homepage', () => {
             })
         })
 });
-
-/*console.log(selectableDates.value); //prints all found elements
-                console.log("dates are " + selectableDates.getText()); //prints all displayed dates
-                console.log("number of dates is " + selectableDates.value.length); //prints number of elements found (in the array)
-                console.log(selectableDates[1].value);*/
